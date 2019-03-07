@@ -1,0 +1,19 @@
+This project is some tentative efforts at using a neural network to regress a particular elaborate function on the integers.
+The associated data involves far more mathematical framework than I want to explain in this readme, but I'll probably link some sources
+here if anyone every requests them.
+
+As a whole, this project has been a bit of a failure practically, but it has been very insightful. The code doesn't work.
+More often than not, it simply ends up predicting the mean value of the sample outputs rather than forming some meaningful analysis.
+This seems to imply to me that a few things could be going on here under the hood. 
+1) It's possible this function is simply too complex, and the only detectible pattern for a feed-forward NN is the mean of the outputs.
+  a) This may mean a different form of NN or ML approach might get better results...
+2) The layering is disfunctional, and too much information is being lost by the distribution of neurons for the net to make any meaningful analysis
+  b) Identifying this problem could be very difficult, but it would be valuable to rule this out.
+3) The actual solution is very hard to reach as a local minimum in the error gradient
+  c) Perhaps this could be done with a speed round of training many agents where agents converging to the mean are reset?
+     This could at least help us detect any local minima which aren't at the mean...
+  
+I'd like to take some time to make this NN at least produce some convincing attempts at regressing this function, but we will have to see.
+It's worth noting that neural nets have only been verified to regress on Lebesgue integral functions, and this may or may not be
+Lebesgue integral. The function itself is actually an integral over the complex plane, and our values are constants in this function.
+A proof of this could be useful, but may be incredibly difficult.
