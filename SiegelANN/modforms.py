@@ -61,13 +61,10 @@ def build_model():
     initializer = keras.initializers.RandomUniform(minval = -2.0, maxval = 2.0, seed=None)
     optimizer = keras.optimizers.Adam(lr=.001, beta_1=.9, beta_2=.999, epsilon=1e-8)
     model = keras.Sequential([
-        layers.Dense(32, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu, input_shape=[len(normedTrainFrame.keys())]),
-        layers.Dense(32, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
-        layers.Dense(32, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
-        layers.Dense(32, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
-        layers.Dense(32, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
-        layers.Dense(32, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
-        layers.Dense(32, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
+        layers.Dense(4096, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu, input_shape=[len(normedTrainFrame.keys())]),
+        layers.Dense(2048, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
+        layers.Dense(2048, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
+        layers.Dense(1024, kernel_initializer=initializer, use_bias=True, activation=tf.nn.relu),
         layers.Dense(1, kernel_initializer=initializer, activation='linear')
         ])
 
